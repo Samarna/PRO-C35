@@ -1,6 +1,5 @@
 class Form {
     constructor(){
-        //this.background = createImg("./background.jpg");
         this.title = createElement("h1","A SURVEY TO BRING ABOUT CHANGE");
         this.name = createInput("Name");
         this.email = createInput("Email");
@@ -22,9 +21,9 @@ class Form {
         this.submit = createButton("SUBMIT");
     }
     display(){
-        //this.background.position(0,0);
         this.title.position(windowWidth/4,50);
         this.name.position(200,200);
+        console.log("&&");
         this.email.position(200,250);
         this.q1.position(200,300);
         this.radio.position(200,350);
@@ -33,5 +32,16 @@ class Form {
         this.q3.position(200,500);
         this.radio2.position(200,550);
         this.submit.position(200,600);
+
+        this.submit.mousePressed(()=>{
+            console.log("*****");
+            user.name = this.name.value();
+            user.email = this.email.value();
+            user.answer = [this.radio.value(),this.radio1.value(),this.radio2.value()];
+            peopleCount += 1;
+            user.index = peopleCount();
+            user.updateDetails();
+            user.updatePeopleCount(peopleCount);
+        })
     }
 }
