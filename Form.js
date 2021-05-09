@@ -39,7 +39,7 @@ class Form {
             user.email = this.email.value();
             user.answer = [this.radio.value(),this.radio1.value(),this.radio2.value()];
             peopleCount += 1;
-            user.index = peopleCount();
+            user.index = peopleCount;
             user.updateDetails();
             user.updatePeopleCount(peopleCount);
         })
